@@ -1,0 +1,130 @@
+/* ========== 全局动画 ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #e8f5e9;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+/* ========== 基础样式 ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ========== 欢迎页 ========== */
+.welcome-screen {
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.welcome-title {
+  font-size: 48px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.welcome-desc {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* ========== 答题页布局 ========== */
+.quiz-screen {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.quiz-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+  .quiz-screen {
+    flex-direction: column;
+  }
+  
+  .welcome-title {
+    font-size: 32px;
+  }
+}
